@@ -2,6 +2,7 @@ package rest
 
 import (
 	"database/sql"
+	"log/slog"
 	"net/http"
 	"time"
 
@@ -46,6 +47,7 @@ func registerHandler(db *sql.DB) gin.HandlerFunc {
 			req.Username, string(hashedPassword), time.Now(),
 		)
 		if err != nil {
+			slog.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to register user"})
 			return
 		}
@@ -83,7 +85,7 @@ func loginHandler(db *sql.DB) gin.HandlerFunc {
 			"exp":     time.Now().Add(time.Hour * 24).Unix(),
 		})
 
-		tokenString, err := token.SignedString([]byte("your-secret-key"))
+		tokenString, err := token.SignedString([]byte("vandan"))
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate token"})
 			return

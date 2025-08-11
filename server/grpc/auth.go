@@ -32,7 +32,7 @@ func AuthInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServe
 	}
 
 	token, err := jwt.Parse(parts[1], func(token *jwt.Token) (interface{}, error) {
-		return []byte("your-secret-key"), nil
+		return []byte("vandan"), nil
 	})
 
 	if err != nil || !token.Valid {
@@ -73,7 +73,7 @@ func StreamAuthInterceptor(srv interface{}, ss grpc.ServerStream, info *grpc.Str
     }
 
     token, err := jwt.Parse(parts[1], func(token *jwt.Token) (interface{}, error) {
-        return []byte("your-secret-key"), nil
+        return []byte("vandan"), nil
     })
     if err != nil || !token.Valid {
         return status.Error(codes.Unauthenticated, "Invalid token")
