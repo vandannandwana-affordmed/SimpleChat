@@ -12,4 +12,4 @@ How it works:-
 
 # Sample Image
 
-<img src="https://github.com/user-attachments/assets/a22643c7-a709-418e-9fff-0382c033bb23" alt="" width = 220px/>
+<img src="https://github.com/user-attachments/assets/a22643c7-a709-418e-9fff-0382c033bb23" alt="" width = 720px/>
