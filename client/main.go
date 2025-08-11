@@ -26,7 +26,7 @@ func main() {
 	client := proto.NewChatServiceClient(conn)
 
 	// Replace with a valid JWT token from /login
-	token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTQ4NDkzNzMsInVzZXJfaWQiOiIyIn0.fpn1VQEGsBsFBh8tLXyeelC9Mu0eZ89HBu-XQJ-NwSw" // e.g., "eyJhbGciOiJIUzI1NiJ9..."
+	token := "<Your JWT Token>" // e.g., "eyJhbGciOiJIUzI1NiJ9..."
 	ctx := metadata.AppendToOutgoingContext(context.Background(), "authorization", "Bearer "+token)
 
 	stream, err := client.Chat(ctx)
@@ -63,7 +63,7 @@ func main() {
 		content = strings.TrimSpace(content)
 
 		err := stream.Send(&proto.ChatMessage{
-			UserId:      "2", // Must match user_id in JWT token
+			UserId:      "1", // Must match user_id in JWT token
 			RecipientId: recipientID,
 			Content:     content,
 			Timestamp:   time.Now().Unix(),

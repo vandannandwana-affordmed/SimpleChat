@@ -9,3 +9,7 @@ How it works:-
 5. Now, In CMD or Powershell -> Enter opponent's userID then, press enter.
 6. Now enter your message. Then press Enter to send message.
 6. Here you go!
+
+# Sample Image
+
+<img src="https://github.com/user-attachments/assets/a22643c7-a709-418e-9fff-0382c033bb23" alt="" width = 220px/>
